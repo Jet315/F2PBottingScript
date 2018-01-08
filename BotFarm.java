@@ -21,14 +21,15 @@ import scripts.goldfarmscript.scripts.Scripts;
 @ScriptManifest(authors = { "Lugia1" }, category = "Botfarm", name = "AdvancedBotfarmScript", version = 1.00, description = "BotFarm")
 public class BotFarm extends Script implements MessageListening07,Painting,Starting {
 
+    /**
+    *Stores the start time, in milliseconds
+    **/
     public static final long startTime = System.currentTimeMillis();
+    /**
+    *Stores the standard font used for the text interface
+    **/
     Font font = new Font("Verdana", Font.BOLD, 14);
 
-
-
-    //When calling method to run a set of node scripts then put them it / remove old ones
-
-    //Generate script object once as it will be used a ton..
 
     @Override
     public void run() {
@@ -49,6 +50,8 @@ public class BotFarm extends Script implements MessageListening07,Painting,Start
                 s.loop();
 
             }
+            //If during the loop the process does not sleep, it will loop through using all the processing power
+            //By sleeping here, it prevents that
             General.sleep(10, 30);
         }
 

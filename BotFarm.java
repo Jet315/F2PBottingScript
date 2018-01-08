@@ -33,13 +33,11 @@ public class BotFarm extends Script implements MessageListening07,Painting,Start
     @Override
     public void run() {
         while (true) {
-            //This script was made over many months, during these months I have changed ways I do tasks which is why I do thing differently in different classes
+            /**
+            *This script was made over multiple months
+            **/
+            //TODO: if variable deciding if account is banned - change account (MySQL database)
 
-            //if variable deciding if account is banned - change account (MySQL database)
-
-
-
-            //Have to create a new object each time I loop - Saves previous data otherwise which messes up the script real bad
             Scripts s = new Scripts();
             //Check if trade is active, if so loop the trade node framework, else loop the normal - I do different loops as else it will go into the trade loop and wont know what loop to go back to
             if(AccountStatus.tradeActive){
@@ -115,19 +113,6 @@ public class BotFarm extends Script implements MessageListening07,Painting,Start
 
 
 }
-//TODO: Potatofarm script - when at edge of field it walks to the field, no need fix this
-
-//TODO : Currently I don't handle null pointer exceoptions very well. I need a method that I can call that will pretty much restart the bot (Sell all it's items, etc)
-
-//TODO: Change way it walks to GE - Walk to west bank, then custom path 2 GE
-//TODO: Add a money making way like potatos so bot can start off with bit of money - Then create a method which is executed after WalkToGE in combat to make starter money, this also needs to be changed in scriptstarterandfinisher class as if say it doesn't have enough money to start softclay script, it will auto pick potato so change this to pick the method I created
-//TODO: add method in Combat.WALKTOGE to buy random clothes?
-//TODO: Add better antiban, (Better stat checks, generate reaction times + Bank methods?)
-
-// TODO: Change start of script so can train multiple spots (Make more advanced as time goes by)
-
-// TODO: Add auto muling (Trading) framework
-// TODO: Add auto account (MySQL database - server pumping in accounts to it)
 
 // TODO: Overtime add more scripts, ideas bellow
 /*
@@ -138,21 +123,10 @@ Fishing script
 
  */
 
-//
-//
-//
-//
-//
-//
-//
-// Possible TODO:s
-// TODO: Possible with taus bot manager I can get a mule to auto give iron amr and scimi
-// TODO: Possible add random walking option after open gate in combat script (When opening chicken door)
 
 
-
-// Random planning
-// Go to GE and sell (A SCRIPT TO AUTO SELL EVERYTHING VALUE IN BANK)
+// Rough plan
+// Go to GE and sell 
 // Then it will start a new script
 // A method should start before it runs the actual script to check if has correct items in bank, if not buys the first lower level items (All the way up to addy)
 // After killing cows should buy some crappy gear so not bot like ( Random helmet, random body, random legs)
